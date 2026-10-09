@@ -1,0 +1,86 @@
+{
+  "name": "visor",
+  "version": "1.0.0",
+  "description": "In-game overlay for Roblox on Windows: server browser, server hop, badges, game history, notes, messages and multi-account, one hotkey away.",
+  "main": "src/main/main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "preview": "node tools/preview.js",
+    "icons": "node tools/make-icon.js",
+    "screenshot": "electron tools/screenshot.js",
+    "dist": "electron-builder --win --publish never",
+    "release": "electron-builder --win --publish always",
+    "check": "node tools/check.js && node tools/test-migration.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AeroUp/Visor.git"
+  },
+  "homepage": "https://github.com/AeroUp/Visor#readme",
+  "bugs": "https://github.com/AeroUp/Visor/issues",
+  "license": "MIT",
+  "author": "Aero",
+  "productName": "Visor",
+  "dependencies": {
+    "electron-updater": "^6.6.2",
+    "koffi": "^2.16.3"
+  },
+  "devDependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "electron": "^44.5.1",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.aeroup.visor",
+    "productName": "Visor",
+    "copyright": "Copyright © 2026 Aero",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "src/**/*",
+      "assets/icon.png",
+      "assets/icon.ico",
+      "package.json",
+      "LICENSE"
+    ],
+    "asar": true,
+    "asarUnpack": [
+      "node_modules/koffi/**"
+    ],
+    "electronFuses": {
+      "runAsNode": false,
+      "enableCookieEncryption": true,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableEmbeddedAsarIntegrityValidation": true,
+      "onlyLoadAppFromAsar": true
+    },
+    "win": {
+      "icon": "assets/icon.ico",
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "artifactName": "Visor-${version}-${os}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Visor",
+      "artifactName": "Visor-Setup-${version}.${ext}",
+      "deleteAppDataOnUninstall": false
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "AeroUp",
+        "repo": "Visor",
+        "releaseType": "release"
+      }
+    ]
+  }
+}

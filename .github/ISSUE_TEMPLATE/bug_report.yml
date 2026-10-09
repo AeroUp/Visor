@@ -1,0 +1,30 @@
+name: Bug report
+description: Something in Visor isn't working
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, what you got instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Visor version
+      description: Right-click the tray icon. The version is in the menu.
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      placeholder: Windows 11 24H2
+  - type: textarea
+    id: log
+    attributes:
+      label: visor.log
+      description: Paste the end of %APPDATA%\Visor\visor.log, or drag the file in.
+      render: text

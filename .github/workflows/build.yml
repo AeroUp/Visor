@@ -1,0 +1,39 @@
+name: Build
+
+# Every push builds the installer. Pushing a v* tag (matching package.json) publishes a
+# GitHub Release, which is also where installed copies get their auto-updates from.
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Build installer
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        run: npm run dist
+      - name: Build and publish release
+        if: ${{ startsWith(github.ref, 'refs/tags/v') }}
+        run: npm run release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/upload-artifact@v4
+        if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
+        with:
+          name: visor-windows
+          path: |
+            release/*.exe
+            release/*.zip

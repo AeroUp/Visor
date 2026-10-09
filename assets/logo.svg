@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <title>Visor</title>
+  <defs>
+    <linearGradient id="lens" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9af5bf"/>
+      <stop offset="0.5" stop-color="#4ade80"/>
+      <stop offset="1" stop-color="#15a34a"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(256 256) scale(1.36) translate(-256 -248)">
+    <path fill="url(#lens)" d="M84 238 C84 196 112 178 152 178 L360 178 C400 178 428 196 428 238 L428 262 C428 298 404 318 368 318 L312 318 C292 318 280 308 272 292 C266 280 246 280 240 292 C232 308 220 318 200 318 L144 318 C108 318 84 298 84 262 Z"/>
+    <path fill="#ffffff" fill-opacity="0.6" d="M124 204 L170 204 L138 292 L104 292 Z"/>
+    <path fill="#ffffff" fill-opacity="0.35" d="M184 204 L202 204 L170 292 L152 292 Z"/>
+  </g>
+</svg>

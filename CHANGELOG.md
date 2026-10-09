@@ -1,0 +1,15 @@
+# Changelog
+
+## 1.0.0
+
+The first public release.
+
+- **Overlay:** opens with one hotkey and pops up over the Roblox window with a quick fade-and-rise animation (reduced-motion is respected). A bottom bar shows your profile, the game you're in and a session timer.
+- **Widgets:** Servers (with server hop), Accounts, Badges, Game history, Games, Messages, Notes and Settings. Pinned widgets stay visible while the overlay is closed.
+- **Multi-account:** works out which account is in each Roblox window, lets you join as any saved account, and has **Join my server**.
+- **Server-join toasts:** "Connected to public server · Location" notifications in the corner.
+- **Shipping:**
+  - a one-click installer, plus a portable zip;
+  - automatic updates from GitHub Releases;
+  - signed-in cookies encrypted at rest by Windows;
+  - hardened Electron settings.
