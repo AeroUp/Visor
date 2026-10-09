@@ -1551,6 +1551,9 @@ img.broken {
 }
 
 .t-logo {
+  display: grid;
+  place-items: center;
+  flex: none;
   width: 22px;
   height: 22px;
   border-radius: 6px;
@@ -1559,8 +1562,9 @@ img.broken {
 }
 
 .t-logo svg {
-  width: 15px;
-  height: 15px;
+  display: block;
+  width: 18px;
+  height: 18px;
 }
 
 .t-title {
