@@ -494,21 +494,33 @@ body:not(.open) .w-head .icon-btn {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   cursor: nwse-resize;
 }
 
+/* A thin arc hugging the widget's rounded corner: hidden until you hover the widget. */
 .w-resize::after {
   content: "";
   position: absolute;
-  right: 4px;
-  bottom: 4px;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid var(--faint);
-  border-bottom: 2px solid var(--faint);
-  border-bottom-right-radius: 2px;
+  right: 3px;
+  bottom: 3px;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--line-2);
+  border-bottom: 2px solid var(--line-2);
+  border-bottom-right-radius: 11px;
+  opacity: 0;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+
+.widget:hover .w-resize::after {
+  opacity: 1;
+}
+
+.w-resize:hover::after,
+.w-resize:active::after {
+  border-color: var(--green);
 }
 
 body:not(.open) .w-resize {
