@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- **Server-join toast:** the Visor badge is now drawn as a single image, so the mark stays centered at every Windows display scale, and it's centered on how it looks rather than on its outline.
+
 ## 1.0.1
 
 - **Server-join toast:** the Visor mark is now centered in its badge.

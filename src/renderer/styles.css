@@ -1550,21 +1550,23 @@ img.broken {
   margin-bottom: 7px;
 }
 
+/* One SVG draws both the tile and the mark (icons.js visorBadge), so they can't drift apart. */
 .t-logo {
-  display: grid;
-  place-items: center;
+  display: block;
   flex: none;
   width: 22px;
   height: 22px;
-  border-radius: 6px;
-  background: var(--green);
   color: #0c2114;
 }
 
 .t-logo svg {
   display: block;
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
+}
+
+.t-logo .badge-bg {
+  fill: var(--green);
 }
 
 .t-title {

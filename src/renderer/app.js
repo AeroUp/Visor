@@ -391,7 +391,7 @@
     const el = h(
       'div',
       { class: 'toast' },
-      h('div', { class: 't-app' }, FL.icon('visor', 16, 't-logo'), 'Visor'),
+      h('div', { class: 't-app' }, FL.icon('visorBadge', 22, 't-logo'), 'Visor'),
       h('div', { class: 't-title' }, title),
       (lines || []).map((l) => h('div', { class: 't-line' }, l))
     );

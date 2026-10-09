@@ -1,6 +1,13 @@
 'use strict';
 // Stroke icons (24x24 grid, Lucide-style). Static markup only — never interpolate data here.
+const VISOR_MARK =
+  '<g transform="scale(0.046875)" stroke="none"><g transform="translate(256 256) scale(1.36) translate(-256 -248)"><path fill="currentColor" d="M84 238 C84 196 112 178 152 178 L360 178 C400 178 428 196 428 238 L428 262 C428 298 404 318 368 318 L312 318 C292 318 280 308 272 292 C266 280 246 280 240 292 C232 308 220 318 200 318 L144 318 C108 318 84 298 84 262 Z"/><path fill="#fff" fill-opacity="0.6" d="M124 204 L170 204 L138 292 L104 292 Z"/><path fill="#fff" fill-opacity="0.35" d="M184 204 L202 204 L170 292 L152 292 Z"/></g></g>';
+
 window.FL_ICONS = {
+  // Toast badge: tile and mark in one SVG, so they scale together at any display scaling.
+  // The mark is centred on its visual weight, not its box (measured on the rendered badge): the light
+  // stripes make its left side lighter, so box-centred it looks shifted right.
+  visorBadge: `<rect class="badge-bg" width="24" height="24" rx="6.5" stroke="none"/><g transform="translate(12 12) scale(0.7) translate(-12.6 -11.87)">${VISOR_MARK}</g>`,
   message: '<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01M12 12h.01M16 12h.01"/>',
   trophy:
     '<path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>',
@@ -32,7 +39,7 @@ window.FL_ICONS = {
   logout: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',
   login: '<path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M15 12H3"/>',
   grip: '<g fill="currentColor" stroke="none"><circle cx="9" cy="6" r="1.5"/><circle cx="15" cy="6" r="1.5"/><circle cx="9" cy="12" r="1.5"/><circle cx="15" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></g>',
-  visor: '<g transform="scale(0.046875)" stroke="none"><g transform="translate(256 256) scale(1.36) translate(-256 -248)"><path fill="currentColor" d="M84 238 C84 196 112 178 152 178 L360 178 C400 178 428 196 428 238 L428 262 C428 298 404 318 368 318 L312 318 C292 318 280 308 272 292 C266 280 246 280 240 292 C232 308 220 318 200 318 L144 318 C108 318 84 298 84 262 Z"/><path fill="#fff" fill-opacity="0.6" d="M124 204 L170 204 L138 292 L104 292 Z"/><path fill="#fff" fill-opacity="0.35" d="M184 204 L202 204 L170 292 L152 292 Z"/></g></g>',
+  visor: VISOR_MARK,
   roblox: '<g transform="rotate(16 12 12)"><rect x="4.5" y="4.5" width="15" height="15" rx="2"/><rect x="10" y="10" width="4" height="4" rx=".5" fill="currentColor" stroke="none"/></g>',
   users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>',
   plus: '<path d="M12 5v14M5 12h14"/>',
