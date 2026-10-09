@@ -54,12 +54,6 @@ The bar along the bottom shows your profile, the game you're in and a session ti
 
 No third-party tool can promise anything about Roblox's rules, but Visor only does what an overlay and a web browser do.
 
-## Upgrading from Fishlay
-
-Close Fishlay before the first launch of Visor. If Visor has no `visor.json` yet, it copies Fishlay's settings, notes, saved account list and session partitions, leaving Fishlay's data untouched. Existing Visor settings and partitions are preserved. You may need to sign in again if a copied session has expired or cannot be decrypted.
-
-If copying fails, Visor exits without saving default settings so the migration can be retried. Close Fishlay and relaunch Visor. If you already launched an older Visor build and only see defaults, close both apps and back up both `%APPDATA%\Fishlay` and `%APPDATA%\Visor` before renaming Visor's `visor.json` to `visor.json.backup` and launching the updated build. Do this only if you want to replace those Visor settings with Fishlay's settings; keep the backups until you have checked the result.
-
 ## Multiple accounts
 
 - **Detection:** every Roblox window writes its own log, so Visor works out which account is in which window. The bar and widgets follow whichever window you're in, even after an in-app account switch.
