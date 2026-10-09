@@ -47,7 +47,7 @@ The bar along the bottom shows your profile, the game you're in and a session ti
 ## Is it safe? Can I get banned?
 
 - **Nothing is injected into Roblox.** Visor is a separate, click-through window that sits on top of the Roblox window, like the Discord or Steam overlay. It never touches the game's memory or files.
-- **It learns what you're playing from Roblox's own log files.** That's the same method Bloxstrap and Fishstrap use.
+- **It learns what you're playing from Roblox's own log files.** That's the same method Bloxstrap uses.
 - **Everything else comes from Roblox's public web APIs.** That's the same data roblox.com shows you.
 - **Signing in is optional.** It's only needed for Messages, badge ownership, online status and multiple accounts. It happens on **roblox.com's own login page** in a separate window, so Visor never sees your password. Each account keeps its own cookie jar on your PC, encrypted by Windows, and Visor only ever sends it to roblox.com.
 - **It's open source.** Read the code, or build it yourself (see below).
@@ -105,8 +105,6 @@ tools/                   preview server, screenshots, icon renderer, checks
 
 Releases are built and published by GitHub Actions when a `v*` tag is pushed.
 
-## Credits
+## License
 
-The overlay's look and feel was inspired by Fishstrap's in-game overlay. Visor is an independent project, and it isn't affiliated with Roblox Corporation, Bloxstrap or Fishstrap.
-
-MIT © Aero
+MIT © Aero. Visor is an independent project and isn't affiliated with Roblox Corporation.
