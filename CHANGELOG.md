@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+- **Server-join toast:** the Visor mark is now centered in its badge.
+- **Widgets:** the resize handle is a thin arc that follows the widget's rounded corner. It appears when you hover a widget and turns green when you grab it, instead of a grey bracket that was always visible.
+
 ## 1.0.0
 
 The first public release.

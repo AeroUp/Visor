@@ -1,6 +1,6 @@
 {
   "name": "visor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "In-game overlay for Roblox on Windows: server browser, server hop, badges, game history, notes, messages and multi-account, one hotkey away.",
   "main": "src/main/main.js",
   "private": true,
